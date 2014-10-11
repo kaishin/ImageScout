@@ -40,7 +40,7 @@ scout.scoutImageWithURI("http://.../image-scout-logo.png") { error, size, type i
 ```
 
 If the image is not successfully parsed, the error will contain more info about the reason.
-In that case, he size is going to be `CGSizeZero` and the type `.Unsupported`.
+In that case, the size is going to be `CGSizeZero` and the type `.Unsupported`.
 
 - Error code **100**: Invalid URI parameter.
 - Error code **101**: Image is corrput or malformatted.

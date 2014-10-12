@@ -1,0 +1,6 @@
+language: objective-c
+before_script:
+    - brew update && brew upgrade xctool
+xcode_project: ImageScout.xcodeproj
+xcode_scheme: ImageScoutTests
+xcode_sdk: iphonesimulator

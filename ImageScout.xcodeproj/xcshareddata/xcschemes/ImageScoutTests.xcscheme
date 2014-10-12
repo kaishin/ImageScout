@@ -9,20 +9,6 @@
          <BuildActionEntry
             buildForTesting = "YES"
             buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9D52340919DE0A4900FEE5AC"
-               BuildableName = "ImageScout.app"
-               BlueprintName = "ImageScout"
-               ReferencedContainer = "container:ImageScout.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
             buildForProfiling = "NO"
             buildForArchiving = "NO"
             buildForAnalyzing = "YES">
@@ -56,9 +42,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9D52340919DE0A4900FEE5AC"
-            BuildableName = "ImageScout.app"
-            BlueprintName = "ImageScout"
+            BlueprintIdentifier = "9D52341E19DE0A4A00FEE5AC"
+            BuildableName = "ImageScoutTests.xctest"
+            BlueprintName = "ImageScoutTests"
             ReferencedContainer = "container:ImageScout.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -72,15 +58,15 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable>
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9D52340919DE0A4900FEE5AC"
-            BuildableName = "ImageScout.app"
-            BlueprintName = "ImageScout"
+            BlueprintIdentifier = "9D52341E19DE0A4A00FEE5AC"
+            BuildableName = "ImageScoutTests.xctest"
+            BlueprintName = "ImageScoutTests"
             ReferencedContainer = "container:ImageScout.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -90,15 +76,15 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable>
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9D52340919DE0A4900FEE5AC"
-            BuildableName = "ImageScout.app"
-            BlueprintName = "ImageScout"
+            BlueprintIdentifier = "9D52341E19DE0A4A00FEE5AC"
+            BuildableName = "ImageScoutTests.xctest"
+            BlueprintName = "ImageScoutTests"
             ReferencedContainer = "container:ImageScout.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

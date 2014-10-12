@@ -1,6 +1,6 @@
 <img src="https://dl.dropboxusercontent.com/u/148921/assets/image-scout-logo.png" width="200" />
 
-![](http://img.shields.io/travis/kaishin/ImageScout.svg?style=flat)
+[![Travis](http://img.shields.io/travis/kaishin/ImageScout.svg?style=flat)](https://travis-ci.org/kaishin/ImageScout/)
 
 **ImageScout** is a Swift implementation of [fastimage](https://pypi.python.org/pypi/fastimage/0.2.1).
 It allows you to find the size and type of a remote image by downloading as little as possible.

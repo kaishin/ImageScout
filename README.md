@@ -34,9 +34,9 @@ let scout = ImageScout()
 
 scout.scoutImageWithURI("http://.../image-scout-logo.png") { error, size, type in
   if let unwrappedError = error {
-    println(unwrappedError.domain)
+    println(unwrappedError.code)
   } else {
-    println("Size: \(size)
+    println("Size: \(size)")
     println("Type: \(type.rawValue)")
   }
 }

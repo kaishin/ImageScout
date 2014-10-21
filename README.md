@@ -26,6 +26,7 @@ The only method you will be using is `scoutImageWithURI()`, with the following f
 ```swift
 func scoutImageWithURI(URI: String, completion: (NSError?, CGSize, ScoutedImageType) -> ())
 ```
+
 Here's an example:
 
 ```swift
@@ -46,7 +47,7 @@ In that case, the size is going to be `CGSizeZero` and the type `.Unsupported`.
 
 - Error code **100**: Invalid URI parameter.
 - Error code **101**: Image is corrput or malformatted.
-- Error coe **102**: Not an image or unsopported image format URL.
+- Error code **102**: Not an image or unsopported image format URL.
 
 #### Compatibility
 

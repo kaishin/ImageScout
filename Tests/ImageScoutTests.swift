@@ -75,7 +75,7 @@ class ImageScoutTests: XCTestCase {
       XCTAssertEqual(size, CGSizeZero, "Image size should be 0 by 0")
       XCTAssertEqual(type, ScoutedImageType.Unsupported ,"Image type should be Unsupported")
       XCTAssertNotNil(error, "Error should not be nil")
-      XCTAssertEqual(error!.domain, unsupportedFormatErrorDomain, "Error should describe failure reason")
+      XCTAssertEqual(error!.code, 102, "Error should describe failure reason")
     }
 
     waitForExpectationsWithTimeout(expectationTimeOut, handler: nil)

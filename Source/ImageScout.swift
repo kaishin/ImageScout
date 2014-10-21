@@ -9,9 +9,11 @@ enum ScoutedImageType: String {
 
 typealias ScoutCompletionBlock = (NSError?, CGSize, ScoutedImageType) -> ()
 
-let unsupportedFormatErrorDomain = "Unsupported image format. ImageScout only supports PNG, GIF, and JPEG."
-let unableToParseErrorDomain = "Scouting operation failed. The remote image is likely malformated or corrupt."
-let invalidURIErrorDomain = "Invalid URI parameter."
+let unsupportedFormatErrorMessage = "Unsupported image format. ImageScout only supports PNG, GIF, and JPEG."
+let unableToParseErrorMessage = "Scouting operation failed. The remote image is likely malformated or corrupt."
+let invalidURIErrorMessage = "Invalid URI parameter."
+
+let errorDomain = "ImageScoutErrorDomain"
 
 class ImageScout {
   private var session: NSURLSession
@@ -40,7 +42,7 @@ class ImageScout {
 
       addOperation(operation, withURI: URI)
     } else {
-      let URLError = NSError(domain: invalidURIErrorDomain, code: 100, userInfo: ["URI": URI])
+      let URLError = ImageScout.error(invalidURIErrorMessage, code: 100)
       completion(URLError, CGSizeZero, ScoutedImageType.Unsupported)
     }
   }
@@ -57,7 +59,7 @@ class ImageScout {
 
   func didCompleteWithError(error: NSError?, task: NSURLSessionDataTask) {
     if let requestURL = task.currentRequest.URL.absoluteString {
-      let completionError = error ?? NSError(domain: unableToParseErrorDomain, code: 101, userInfo: nil)
+      let completionError = error ?? ImageScout.error(unableToParseErrorMessage, code: 101)
 
       if let operation = operations[requestURL] {
         operation.terminateWithError(completionError)
@@ -65,11 +67,17 @@ class ImageScout {
     }
   }
 
-  // MARK: Private
+  // MARK: Private Methods
 
   private func addOperation(operation: ScoutOperation, withURI URI: String) {
     operations[URI] = operation
     queue.addOperation(operation)
+  }
+
+  // MARK: Class Methods
+
+  class func error(message: String, code: Int) -> NSError {
+    return NSError(domain: errorDomain, code:code, userInfo:[NSLocalizedDescriptionKey: message])
   }
 
   // MARK: - Delegate
@@ -117,7 +125,7 @@ class ImageScout {
     }
 
     func terminateWithError(completionError: NSError) {
-      error = NSError(domain: invalidURIErrorDomain, code: 100, userInfo: nil)
+      error = ImageScout.error(invalidURIErrorMessage, code: 100)
       complete()
     }
 
@@ -129,7 +137,7 @@ class ImageScout {
         size = Parser.imageSizeFromData(dataCopy)
         if (size != CGSizeZero) { complete() }
       } else if dataCopy.length > 2 {
-        self.error = NSError(domain: unsupportedFormatErrorDomain, code: 102, userInfo: nil)
+        self.error = ImageScout.error(unsupportedFormatErrorMessage, code: 102)
         complete()
       }
     }

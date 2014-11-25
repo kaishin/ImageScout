@@ -35,7 +35,7 @@ class ImageScout {
     if let unwrappedURL = NSURL(string: URI) {
       let operation = ScoutOperation(task: session.dataTaskWithURL(unwrappedURL))
 
-      operation.completionBlock = {
+      operation.completionBlock = { [unowned self] in
         completion(operation.error, operation.size, operation.type)
         self.operations[URI] = nil
       }
@@ -83,7 +83,7 @@ class ImageScout {
   // MARK: - Delegate
   
   private class SessionDelegate: NSObject, NSURLSessionDataDelegate  {
-    var scout: ImageScout?
+    weak var scout: ImageScout?
     
     private func URLSession(session: NSURLSession, dataTask: NSURLSessionDataTask, didReceiveData data: NSData) {
       if let unwrappedScout = scout {

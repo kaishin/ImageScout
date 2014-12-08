@@ -18,7 +18,8 @@ it stops the download. The downloaded data is below 60 KB in most cases.
 #### Install
 
 If you use [Carthage](https://github.com/Carthage/Carthage), add this to your `cartfile`: `github "kaishin/ImageScout"`.
-If your prefer Git submodules, you want to add the files in `source` to your Xcode project.
+
+If your prefer Git submodules or want to support iOS 7, you want to add the files in `source` to your Xcode project.
 
 #### Usage
 
@@ -52,7 +53,7 @@ In that case, the size is going to be `CGSizeZero` and the type `.Unsupported`.
 
 #### Compatibility
 
-- iOS 8.0 and above.
+- iOS 7.0 and above (Frameworks only work with iOS 8.0)
 - Compiles with Xcode 6.1 and above.
 
 #### License

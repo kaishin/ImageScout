@@ -1,4 +1,5 @@
 import UIKit
+import ImageScout
 
 class ViewController: UIViewController {
 

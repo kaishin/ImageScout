@@ -1,13 +1,13 @@
 import QuartzCore
 
-enum ScoutedImageType: String {
+public enum ScoutedImageType: String {
   case GIF = "gif"
   case PNG = "png"
   case JPEG = "jpeg"
   case Unsupported = "unsupported"
 }
 
-typealias ScoutCompletionBlock = (NSError?, CGSize, ScoutedImageType) -> ()
+public typealias ScoutCompletionBlock = (NSError?, CGSize, ScoutedImageType) -> ()
 
 let unsupportedFormatErrorMessage = "Unsupported image format. ImageScout only supports PNG, GIF, and JPEG."
 let unableToParseErrorMessage = "Scouting operation failed. The remote image is likely malformated or corrupt."
@@ -15,13 +15,13 @@ let invalidURIErrorMessage = "Invalid URI parameter."
 
 let errorDomain = "ImageScoutErrorDomain"
 
-class ImageScout {
+public class ImageScout {
   private var session: NSURLSession
   private var sessionDelegate = SessionDelegate()
   private var queue = NSOperationQueue()
   private var operations = [String : ScoutOperation]()
   
-  init() {
+  public init() {
     let sessionConfig = NSURLSessionConfiguration.ephemeralSessionConfiguration()
     session = NSURLSession(configuration: sessionConfig, delegate: sessionDelegate, delegateQueue: nil)
     sessionDelegate.scout = self
@@ -31,7 +31,7 @@ class ImageScout {
   /// The completion block takes an optional error, a size, and an image type,
   /// and returns void.
   
-  func scoutImageWithURI(URI: String, completion: ScoutCompletionBlock) {
+  public func scoutImageWithURI(URI: String, completion: ScoutCompletionBlock) {
     if let unwrappedURL = NSURL(string: URI) {
       let operation = ScoutOperation(task: session.dataTaskWithURL(unwrappedURL))
 

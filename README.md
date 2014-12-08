@@ -52,7 +52,7 @@ In that case, the size is going to be `CGSizeZero` and the type `.Unsupported`.
 
 #### Compatibility
 
-- iOS 7.0 and above.
+- iOS 8.0 and above.
 - Compiles with Xcode 6.1 and above.
 
 #### License

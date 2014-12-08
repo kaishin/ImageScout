@@ -1,5 +1,2 @@
 language: objective-c
-osx_image: xcode61
-xcode_project: ImageScout.xcodeproj
-xcode_scheme: ImageScout
-xcode_sdk: iphonesimulator
+script: bin/test

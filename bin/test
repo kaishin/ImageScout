@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+set -o pipefail
+
+xcodebuild test -project ImageScout.xcodeproj -scheme ImageScout -sdk iphonesimulator BUILD_ACTIVE_ARCH=NO | xcpretty -t -c

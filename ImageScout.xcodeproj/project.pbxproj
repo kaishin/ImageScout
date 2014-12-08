@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		008D0C9219E7BA300018CF15 /* ImageScoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008D0C9119E7BA300018CF15 /* ImageScoutTests.swift */; };
 		009608C61A363B030075A5C9 /* ImageScout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005FAE2C19E16CFE00FB4919 /* ImageScout.swift */; };
+		00B8C7941A36505100C188E7 /* ImageScout.h in Headers */ = {isa = PBXBuildFile; fileRef = 00B8C7931A36505100C188E7 /* ImageScout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EAF49BAA1A36028500B395DF /* ImageScout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005FAE2C19E16CFE00FB4919 /* ImageScout.swift */; };
 		EAF49BC41A36093800B395DF /* scout.bmp in Resources */ = {isa = PBXBuildFile; fileRef = EAF49BBC1A36092D00B395DF /* scout.bmp */; };
 		EAF49BC51A36093800B395DF /* scout.gif in Resources */ = {isa = PBXBuildFile; fileRef = EAF49BBD1A36092D00B395DF /* scout.gif */; };
@@ -19,6 +20,7 @@
 /* Begin PBXFileReference section */
 		005FAE2C19E16CFE00FB4919 /* ImageScout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageScout.swift; sourceTree = "<group>"; };
 		008D0C9119E7BA300018CF15 /* ImageScoutTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageScoutTests.swift; sourceTree = "<group>"; };
+		00B8C7931A36505100C188E7 /* ImageScout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageScout.h; sourceTree = "<group>"; };
 		9D52341F19DE0A4A00FEE5AC /* ImageScoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageScoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D52342419DE0A4A00FEE5AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EAF49B911A3600E300B395DF /* ImageScout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ImageScout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,6 +88,7 @@
 		EAF49B921A3600E300B395DF /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				00B8C7931A36505100C188E7 /* ImageScout.h */,
 				005FAE2C19E16CFE00FB4919 /* ImageScout.swift */,
 				EAF49B931A3600E300B395DF /* Supporting Files */,
 			);
@@ -119,6 +122,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00B8C7941A36505100C188E7 /* ImageScout.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

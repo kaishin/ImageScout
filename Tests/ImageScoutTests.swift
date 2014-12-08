@@ -8,6 +8,7 @@
 
 import UIKit
 import XCTest
+import ImageScout
 
 private let expectationTimeOut: NSTimeInterval = 5
 
@@ -23,7 +24,7 @@ class ImageScoutTests: XCTestCase {
   func testScoutingJPEG() {
     let scout = ImageScout()
     let expectation = expectationWithDescription("Scout JPEG images")
-    let imagePath = NSBundle.mainBundle().URLForResource("scout", withExtension: "jpg")
+    let imagePath = NSBundle(forClass: ImageScoutTests.self).URLForResource("scout", withExtension: "jpg")
 
     scout.scoutImageWithURI(imagePath!.absoluteString!) { (error, size, type) -> () in
       expectation.fulfill()
@@ -38,7 +39,7 @@ class ImageScoutTests: XCTestCase {
   func testScoutingPNG() {
     let scout = ImageScout()
     let expectation = expectationWithDescription("Scout PNG images")
-    let imagePath = NSBundle.mainBundle().URLForResource("scout", withExtension: "png")
+    let imagePath = NSBundle(forClass: ImageScoutTests.self).URLForResource("scout", withExtension: "png")
 
     scout.scoutImageWithURI(imagePath!.absoluteString!) { (error, size, type) -> () in
       expectation.fulfill()
@@ -53,7 +54,7 @@ class ImageScoutTests: XCTestCase {
   func testScoutingGIF() {
     let scout = ImageScout()
     let expectation = expectationWithDescription("Scout GIF images")
-    let imagePath = NSBundle.mainBundle().URLForResource("scout", withExtension: "gif")
+    let imagePath = NSBundle(forClass: ImageScoutTests.self).URLForResource("scout", withExtension: "gif")
 
     scout.scoutImageWithURI(imagePath!.absoluteString!) { (error, size, type) -> () in
       expectation.fulfill()
@@ -68,7 +69,7 @@ class ImageScoutTests: XCTestCase {
   func testScoutingUnsupported() {
     let scout = ImageScout()
     let expectation = expectationWithDescription("Ignore unsupported formats")
-    let imagePath = NSBundle.mainBundle().URLForResource("scout", withExtension: "bmp")
+    let imagePath = NSBundle(forClass: ImageScoutTests.self).URLForResource("scout", withExtension: "bmp")
 
     scout.scoutImageWithURI(imagePath!.absoluteString!) { (error, size, type) -> () in
       expectation.fulfill()

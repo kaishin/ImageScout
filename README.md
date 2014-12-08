@@ -17,7 +17,8 @@ it stops the download. The downloaded data is below 60 KB in most cases.
 
 #### Install
 
-Use Git submodules. You want to add the file(s) in `source` to your Xcode project.
+If you use [Carthage](https://github.com/Carthage/Carthage), add this to your `cartfile`: `github "kaishin/ImageScout"`.
+If your prefer Git submodules, you want to add the files in `source` to your Xcode project.
 
 #### Usage
 

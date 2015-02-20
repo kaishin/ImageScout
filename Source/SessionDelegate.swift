@@ -11,7 +11,7 @@ class SessionDelegate: NSObject, NSURLSessionDataDelegate  {
   
   func URLSession(session: NSURLSession, task: NSURLSessionTask, didCompleteWithError error: NSError?) {
     if let unwrappedScout = scout {
-      unwrappedScout.didCompleteWithError(error, task: task as NSURLSessionDataTask)
+      unwrappedScout.didCompleteWithError(error, task: task as! NSURLSessionDataTask)
     }
   }
 }

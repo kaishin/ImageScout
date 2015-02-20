@@ -30,7 +30,7 @@ class ScoutOperation: NSOperation {
   }
   
   private func parse() {
-    let dataCopy = mutableData.copy() as NSData
+    let dataCopy = mutableData.copy() as! NSData
     type = ImageParser.imageTypeFromData(dataCopy)
     
     if (type != .Unsupported) {

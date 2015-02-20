@@ -128,7 +128,7 @@ struct ImageParser {
       var length = UInt16(0)
       data.getBytes(&length, range: NSRange(location: offset + 1, length: 2))
       
-      let newOffset = offset + CFSwapInt16(length) - 1
+      let newOffset = offset + Int(CFSwapInt16(length)) - 1
       return self.parseJPEGData(data, offset: Int(newOffset), segment: .NextSegment)
       
     case .ParseSegment:

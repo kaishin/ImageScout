@@ -10,6 +10,12 @@
 		008D0C9219E7BA300018CF15 /* ImageScoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008D0C9119E7BA300018CF15 /* ImageScoutTests.swift */; };
 		009608C61A363B030075A5C9 /* ImageScout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005FAE2C19E16CFE00FB4919 /* ImageScout.swift */; };
 		00B8C7941A36505100C188E7 /* ImageScout.h in Headers */ = {isa = PBXBuildFile; fileRef = 00B8C7931A36505100C188E7 /* ImageScout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		00D842631A97D2C1006B4763 /* ScoutOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D842621A97D2C1006B4763 /* ScoutOperation.swift */; };
+		00D842641A97D2CB006B4763 /* ScoutOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D842621A97D2C1006B4763 /* ScoutOperation.swift */; };
+		00D842661A97D31E006B4763 /* ImageParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D842651A97D31E006B4763 /* ImageParser.swift */; };
+		00D842681A97D37F006B4763 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D842671A97D37F006B4763 /* SessionDelegate.swift */; };
+		00D842691A97D4B1006B4763 /* ImageParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D842651A97D31E006B4763 /* ImageParser.swift */; };
+		00D8426A1A97D4B3006B4763 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D842671A97D37F006B4763 /* SessionDelegate.swift */; };
 		EAF49BAA1A36028500B395DF /* ImageScout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005FAE2C19E16CFE00FB4919 /* ImageScout.swift */; };
 		EAF49BC41A36093800B395DF /* scout.bmp in Resources */ = {isa = PBXBuildFile; fileRef = EAF49BBC1A36092D00B395DF /* scout.bmp */; };
 		EAF49BC51A36093800B395DF /* scout.gif in Resources */ = {isa = PBXBuildFile; fileRef = EAF49BBD1A36092D00B395DF /* scout.gif */; };
@@ -21,6 +27,9 @@
 		005FAE2C19E16CFE00FB4919 /* ImageScout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageScout.swift; sourceTree = "<group>"; };
 		008D0C9119E7BA300018CF15 /* ImageScoutTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageScoutTests.swift; sourceTree = "<group>"; };
 		00B8C7931A36505100C188E7 /* ImageScout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageScout.h; sourceTree = "<group>"; };
+		00D842621A97D2C1006B4763 /* ScoutOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoutOperation.swift; sourceTree = "<group>"; };
+		00D842651A97D31E006B4763 /* ImageParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageParser.swift; sourceTree = "<group>"; };
+		00D842671A97D37F006B4763 /* SessionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionDelegate.swift; sourceTree = "<group>"; };
 		9D52341F19DE0A4A00FEE5AC /* ImageScoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageScoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D52342419DE0A4A00FEE5AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EAF49B911A3600E300B395DF /* ImageScout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ImageScout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,6 +99,9 @@
 			children = (
 				00B8C7931A36505100C188E7 /* ImageScout.h */,
 				005FAE2C19E16CFE00FB4919 /* ImageScout.swift */,
+				00D842621A97D2C1006B4763 /* ScoutOperation.swift */,
+				00D842651A97D31E006B4763 /* ImageParser.swift */,
+				00D842671A97D37F006B4763 /* SessionDelegate.swift */,
 				EAF49B931A3600E300B395DF /* Supporting Files */,
 			);
 			path = Source;
@@ -227,8 +239,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00D842691A97D4B1006B4763 /* ImageParser.swift in Sources */,
+				00D8426A1A97D4B3006B4763 /* SessionDelegate.swift in Sources */,
 				009608C61A363B030075A5C9 /* ImageScout.swift in Sources */,
 				008D0C9219E7BA300018CF15 /* ImageScoutTests.swift in Sources */,
+				00D842641A97D2CB006B4763 /* ScoutOperation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,7 +251,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00D842631A97D2C1006B4763 /* ScoutOperation.swift in Sources */,
 				EAF49BAA1A36028500B395DF /* ImageScout.swift in Sources */,
+				00D842661A97D31E006B4763 /* ImageParser.swift in Sources */,
+				00D842681A97D37F006B4763 /* SessionDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

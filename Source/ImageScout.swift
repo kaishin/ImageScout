@@ -50,14 +50,14 @@ public class ImageScout {
   // MARK: Delegate Methods
 
   func didReceiveData(data: NSData, task: NSURLSessionDataTask) {
-    if let requestURL = task.currentRequest.URL?.absoluteString,
+    if let requestURL = task.currentRequest?.URL?.absoluteString,
       let operation = operations[requestURL] {
         operation.appendData(data)
     }
   }
 
   func didCompleteWithError(error: NSError?, task: NSURLSessionDataTask) {
-    if let requestURL = task.currentRequest.URL?.absoluteString {
+    if let requestURL = task.currentRequest?.URL?.absoluteString {
       let completionError = error ?? ImageScout.error(unableToParseErrorMessage, code: 101)
 
       if let operation = operations[requestURL] {

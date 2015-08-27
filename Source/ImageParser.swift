@@ -77,10 +77,10 @@ struct ImageParser {
   // MARK: JPEG
   
   static func JPEGSizeFromData(data: NSData) -> CGSize {
-    var offset = 2
+    let offset = 2
     var size: CGSize?
     
-    do {
+    repeat {
       if (data.length <= offset) { size = CGSizeZero }
       size = self.parseJPEGData(data, offset: offset, segment: .NextSegment)
     } while size == nil

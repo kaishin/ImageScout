@@ -2,6 +2,8 @@
 
 [![Travis](http://img.shields.io/travis/kaishin/ImageScout.svg?style=flat)](https://travis-ci.org/kaishin/ImageScout/)
 
+_Note: If you're looking for the Swift 1.2 version, it is located [here](https://github.com/kaishin/ImageScout/tree/swift-1.2)_.
+
 **ImageScout** is a Swift implementation of [fastimage](https://pypi.python.org/pypi/fastimage/0.2.1).
 It allows you to find the size and type of a remote image by downloading as little as possible.
 

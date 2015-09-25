@@ -59,7 +59,8 @@ struct ImageParser {
   static func PNGSizeFromData(data: NSData) -> CGSize {
     if (data.length < 25) { return CGSizeZero }
     
-    var size = PNGSize(); data.getBytes(&size, range: NSRange(location: 16, length: 8))
+    var size = PNGSize()
+    data.getBytes(&size, range: NSRange(location: 16, length: 8))
     
     return CGSize(width: Int(CFSwapInt32(size.width)), height: Int(CFSwapInt32(size.height)))
   }

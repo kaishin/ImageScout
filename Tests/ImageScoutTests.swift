@@ -1,11 +1,3 @@
-//
-//  ImageScoutTests.swift
-//  ImageScoutTests
-//
-//  Created by Reda Lemeden on 3/10/14.
-//  Copyright (c) 2014 Kaishin & Co. All rights reserved.
-//
-
 import UIKit
 import XCTest
 

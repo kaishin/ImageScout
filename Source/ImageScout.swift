@@ -32,38 +32,35 @@ public class ImageScout {
   /// and returns void.
   
   public func scoutImageWithURI(URI: String, completion: ScoutCompletionBlock) {
-    if let unwrappedURL = NSURL(string: URI) {
-      let operation = ScoutOperation(task: session.dataTaskWithURL(unwrappedURL))
-
-      operation.completionBlock = { [unowned self] in
-        completion(operation.error, operation.size, operation.type)
-        self.operations[URI] = nil
-      }
-
-      addOperation(operation, withURI: URI)
-    } else {
+    guard let URL = NSURL(string: URI) else {
       let URLError = ImageScout.error(invalidURIErrorMessage, code: 100)
-      completion(URLError, CGSizeZero, ScoutedImageType.Unsupported)
+      return completion(URLError, CGSizeZero, ScoutedImageType.Unsupported)
     }
+
+    let operation = ScoutOperation(task: session.dataTaskWithURL(URL))
+    operation.completionBlock = { [unowned self] in
+      completion(operation.error, operation.size, operation.type)
+      self.operations[URI] = nil
+    }
+
+    addOperation(operation, withURI: URI)
   }
 
   // MARK: Delegate Methods
 
   func didReceiveData(data: NSData, task: NSURLSessionDataTask) {
-    if let requestURL = task.currentRequest?.URL?.absoluteString,
-      let operation = operations[requestURL] {
-        operation.appendData(data)
-    }
+    guard let requestURL = task.currentRequest?.URL?.absoluteString else { return }
+    guard let operation = operations[requestURL] else { return }
+
+    operation.appendData(data)
   }
 
   func didCompleteWithError(error: NSError?, task: NSURLSessionDataTask) {
-    if let requestURL = task.currentRequest?.URL?.absoluteString {
-      let completionError = error ?? ImageScout.error(unableToParseErrorMessage, code: 101)
+    guard let requestURL = task.currentRequest?.URL?.absoluteString else { return }
+    guard let operation = operations[requestURL] else { return }
 
-      if let operation = operations[requestURL] {
-        operation.terminateWithError(completionError)
-      }
-    }
+    let completionError = error ?? ImageScout.error(unableToParseErrorMessage, code: 101)
+    operation.terminateWithError(completionError)
   }
 
   // MARK: Private Methods

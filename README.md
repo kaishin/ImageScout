@@ -53,6 +53,8 @@ In that case, the size is going to be `CGSizeZero` and the type `.Unsupported`.
 - Error code **101**: Image is corrupt or malformatted.
 - Error code **102**: Not an image or unsopported image format URL.
 
+It's important to maintain reference to the `ImageScout` instance until the callback completes. If reference is lost, your completion handler will never be executed.
+
 #### Compatibility
 
 - iOS 7.0 and above (Frameworks only work with iOS 8.0)

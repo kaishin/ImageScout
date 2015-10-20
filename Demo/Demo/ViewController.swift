@@ -20,7 +20,7 @@ class ViewController: UIViewController {
   }
 
   private func scoutImageWithPath(path: NSURL, label: UILabel) -> () {
-    scout.scoutImageWithURI(path.absoluteString!) { error, size, type in
+    scout.scoutImageWithURI(path.absoluteString) { error, size, type in
       onMain { label.text = "\(Int(size.width))x\(Int(size.height)), \(type.rawValue.uppercaseString)" }
     }
   }

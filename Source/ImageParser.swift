@@ -88,56 +88,75 @@ struct ImageParser {
     
     return size!
   }
-  
-  private static func parseJPEGData(data: NSData, offset: Int, segment: JPEGHeaderSegment) -> CGSize {
+  private typealias JPEGParseTuple = (data: NSData, offset: Int, segment: JPEGHeaderSegment)
+
+  private enum JPEGParseResult {
+    case Size(CGSize)
+    case Tuple(JPEGParseTuple)
+  }
+
+  private static func parseJPEG(tuple: JPEGParseTuple) -> JPEGParseResult {
+    let data = tuple.data
+    let offset = tuple.offset
+    let segment = tuple.segment
+
     if segment == .EOISegment
       || (data.length <= offset + 1)
       || (data.length <= offset + 2) && segment == .SkipSegment
       || (data.length <= offset + 7) && segment == .ParseSegment {
-        return CGSizeZero
+        return .Size(CGSizeZero)
     }
-    
     switch segment {
     case .NextSegment:
       let newOffset = offset + 1
       var byte = 0x0; data.getBytes(&byte, range: NSRange(location: newOffset, length: 1))
-      
+
       if byte == 0xFF {
-        return self.parseJPEGData(data, offset: newOffset, segment: .SOFSegment)
+        return .Tuple(JPEGParseTuple(data, offset: newOffset, segment: .SOFSegment))
       } else {
-        return self.parseJPEGData(data, offset: newOffset, segment: .NextSegment)
+        return .Tuple(JPEGParseTuple(data, offset: newOffset, segment: .NextSegment))
       }
-      
     case .SOFSegment:
       let newOffset = offset + 1
       var byte = 0x0; data.getBytes(&byte, range: NSRange(location: newOffset, length: 1))
-      
+
       switch byte {
       case 0xE0...0xEF:
-        return self.parseJPEGData(data, offset: newOffset, segment: .SkipSegment)
+        return .Tuple(JPEGParseTuple(data, offset: newOffset, segment: .SkipSegment))
       case 0xC0...0xC3, 0xC5...0xC7, 0xC9...0xCB, 0xCD...0xCF:
-        return self.parseJPEGData(data, offset: newOffset, segment: .ParseSegment)
+        return .Tuple(JPEGParseTuple(data, offset: newOffset, segment: .ParseSegment))
       case 0xFF:
-        return self.parseJPEGData(data, offset: newOffset, segment: .SOFSegment)
+        return .Tuple(JPEGParseTuple(data, offset: newOffset, segment: .SOFSegment))
       case 0xD9:
-        return self.parseJPEGData(data, offset: newOffset, segment: .EOISegment)
+        return .Tuple(JPEGParseTuple(data, offset: newOffset, segment: .EOISegment))
       default:
-        return self.parseJPEGData(data, offset: newOffset, segment: .SkipSegment)
+        return .Tuple(JPEGParseTuple(data, offset: newOffset, segment: .SkipSegment))
       }
-      
+
     case .SkipSegment:
       var length = UInt16(0)
       data.getBytes(&length, range: NSRange(location: offset + 1, length: 2))
-      
+
       let newOffset = offset + Int(CFSwapInt16(length)) - 1
-      return self.parseJPEGData(data, offset: Int(newOffset), segment: .NextSegment)
-      
+      return .Tuple(JPEGParseTuple(data, offset: Int(newOffset), segment: .NextSegment))
+
     case .ParseSegment:
       var size = JPEGSize(); data.getBytes(&size, range: NSRange(location: offset + 4, length: 4))
-      return CGSize(width: Int(CFSwapInt16(size.width)), height: Int(CFSwapInt16(size.height)))
-      
+      return .Size(CGSize(width: Int(CFSwapInt16(size.width)), height: Int(CFSwapInt16(size.height))))
     default:
-      return CGSizeZero
+      return .Size(CGSizeZero)
+    }
+  }
+
+  private static func parseJPEGData(data: NSData, offset: Int, segment: JPEGHeaderSegment) -> CGSize {
+    var tuple: JPEGParseResult = .Tuple(JPEGParseTuple(data, offset: offset, segment: segment))
+    while true {
+      switch tuple {
+      case .Size(let size):
+        return size
+      case .Tuple(let newTuple):
+        tuple = parseJPEG(newTuple)
+      }
     }
   }
 }

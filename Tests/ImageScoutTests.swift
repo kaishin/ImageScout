@@ -15,9 +15,9 @@ class ImageScoutTests: XCTestCase {
   func testScoutingJPEG() {
     let scout = ImageScout()
     let expectation = expectationWithDescription("Scout JPEG images")
-    let imagePath = NSBundle(forClass: ImageScoutTests.self).URLForResource("scout", withExtension: "jpg")
+    let imagePath = NSBundle(forClass: ImageScoutTests.self).URLForResource("scout", withExtension: "jpg")!
 
-    scout.scoutImageWithURI(imagePath!.absoluteString) { (error, size, type) -> () in
+    scout.scoutImageWithURL(imagePath) { (error, size, type) -> () in
       expectation.fulfill()
       XCTAssertEqual(size, CGSize(width: 500, height: 375), "Image size should be 500 by 375")
       XCTAssertEqual(type, ScoutedImageType.JPEG, "Image type should be JPEG")
@@ -30,9 +30,9 @@ class ImageScoutTests: XCTestCase {
   func testScoutingPNG() {
     let scout = ImageScout()
     let expectation = expectationWithDescription("Scout PNG images")
-    let imagePath = NSBundle(forClass: ImageScoutTests.self).URLForResource("scout", withExtension: "png")
+    let imagePath = NSBundle(forClass: ImageScoutTests.self).URLForResource("scout", withExtension: "png")!
 
-    scout.scoutImageWithURI(imagePath!.absoluteString) { (error, size, type) -> () in
+    scout.scoutImageWithURL(imagePath) { (error, size, type) -> () in
       expectation.fulfill()
       XCTAssertEqual(size, CGSize(width: 500, height: 375), "Image size should be 500 by 375")
       XCTAssertEqual(type, ScoutedImageType.PNG, "Image type should be PNG")
@@ -45,9 +45,9 @@ class ImageScoutTests: XCTestCase {
   func testScoutingGIF() {
     let scout = ImageScout()
     let expectation = expectationWithDescription("Scout GIF images")
-    let imagePath = NSBundle(forClass: ImageScoutTests.self).URLForResource("scout", withExtension: "gif")
+    let imagePath = NSBundle(forClass: ImageScoutTests.self).URLForResource("scout", withExtension: "gif")!
 
-    scout.scoutImageWithURI(imagePath!.absoluteString) { (error, size, type) -> () in
+    scout.scoutImageWithURL(imagePath) { (error, size, type) -> () in
       expectation.fulfill()
       XCTAssertEqual(size, CGSize(width: 500, height: 375), "Image size should be 500 by 375")
       XCTAssertEqual(type, ScoutedImageType.GIF, "Image type should be GIF")
@@ -60,9 +60,9 @@ class ImageScoutTests: XCTestCase {
   func testScoutingUnsupported() {
     let scout = ImageScout()
     let expectation = expectationWithDescription("Ignore unsupported formats")
-    let imagePath = NSBundle(forClass: ImageScoutTests.self).URLForResource("scout", withExtension: "bmp")
+    let imagePath = NSBundle(forClass: ImageScoutTests.self).URLForResource("scout", withExtension: "bmp")!
 
-    scout.scoutImageWithURI(imagePath!.absoluteString) { (error, size, type) -> () in
+    scout.scoutImageWithURL(imagePath) { (error, size, type) -> () in
       expectation.fulfill()
       XCTAssertEqual(size, CGSizeZero, "Image size should be 0 by 0")
       XCTAssertEqual(type, ScoutedImageType.Unsupported ,"Image type should be Unsupported")

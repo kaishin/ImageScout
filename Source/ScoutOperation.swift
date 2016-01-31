@@ -25,7 +25,7 @@ class ScoutOperation: NSOperation {
   }
   
   func terminateWithError(completionError: NSError) {
-    error = ImageScout.error(invalidURIErrorMessage, code: 100)
+    error = completionError
     complete()
   }
   

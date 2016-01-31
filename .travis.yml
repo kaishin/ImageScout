@@ -1,2 +1,3 @@
 language: objective-c
-script: bin/test
+script: ./bin/test
+osx_image: xcode7.1

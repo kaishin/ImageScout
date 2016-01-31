@@ -1,10 +1,10 @@
 import QuartzCore
 
 public enum ScoutedImageType: String {
-  case GIF = "gif"
-  case PNG = "png"
-  case JPEG = "jpeg"
-  case Unsupported = "unsupported"
+  case GIF
+  case PNG
+  case JPEG
+  case Unsupported
 }
 
 public typealias ScoutCompletionBlock = (NSError?, CGSize, ScoutedImageType) -> ()

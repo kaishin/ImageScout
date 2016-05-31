@@ -1,5 +1,6 @@
 import QuartzCore
 
+/// Supported image types.
 public enum ScoutedImageType: String {
   case GIF
   case PNG
@@ -7,6 +8,7 @@ public enum ScoutedImageType: String {
   case Unsupported
 }
 
+/// A scout completion block that takes an optional error, a CGSize, and a ScoutedImageType and returns nothing.
 public typealias ScoutCompletionBlock = (NSError?, CGSize, ScoutedImageType) -> ()
 
 let unsupportedFormatErrorMessage = "Unsupported image format. ImageScout only supports PNG, GIF, and JPEG."
@@ -14,22 +16,23 @@ let unableToParseErrorMessage = "Scouting operation failed. The remote image is 
 
 let errorDomain = "ImageScoutErrorDomain"
 
+/// The class you interact with in order to perform image scouting operations. You should maintain reference to an instance of this class until the callback completes. If reference is lost, your completion handler will never be executed.
 public class ImageScout {
   private var session: NSURLSession
   private var sessionDelegate = SessionDelegate()
   private var queue = NSOperationQueue()
   private var operations = [String : ScoutOperation]()
-  
+
+  /// Creates a default `ImageScout` instance.
   public init() {
     let sessionConfig = NSURLSessionConfiguration.ephemeralSessionConfiguration()
     session = NSURLSession(configuration: sessionConfig, delegate: sessionDelegate, delegateQueue: nil)
     sessionDelegate.scout = self
   }
 
-  /// Takes an `NSURL` and a completion block.
-  /// The completion block takes an optional error, a size, and an image type,
-  /// and returns void.
-  
+  /// Scouts an image in a given URL.
+  /// - parameter URL: The URL of the image.
+  /// - parameter completion: The completion block to call once the scout operation is complete.
   public func scoutImageWithURL(URL: NSURL, completion: ScoutCompletionBlock) {
     let operation = ScoutOperation(task: session.dataTaskWithURL(URL))
     operation.completionBlock = { [unowned self] in

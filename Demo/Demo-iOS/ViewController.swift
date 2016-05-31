@@ -12,15 +12,15 @@ class ViewController: UIViewController {
   @IBOutlet weak var gifLabel: UILabel!
 
   override func viewDidLoad() {
+    super.viewDidLoad()
+
     scoutImageWithPath(jpgPath!, label: jpgLabel)
     scoutImageWithPath(pngPath!, label: pngLabel)
     scoutImageWithPath(gifPath!, label: gifLabel)
-
-    super.viewDidLoad()
   }
 
   private func scoutImageWithPath(path: NSURL, label: UILabel) -> () {
-    scout.scoutImageWithURI(path.absoluteString) { error, size, type in
+    scout.scoutImageWithURL(path) { error, size, type in
       onMain { label.text = "\(Int(size.width))x\(Int(size.height)), \(type.rawValue.uppercaseString)" }
     }
   }

@@ -1,5 +1,6 @@
 import UIKit
 import XCTest
+import ImageScout
 
 private let expectationTimeOut: NSTimeInterval = 5
 

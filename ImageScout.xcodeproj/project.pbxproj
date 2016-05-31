@@ -7,15 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		005452861C5EAE72005D56E3 /* ImageScout-Mac.h in Headers */ = {isa = PBXBuildFile; fileRef = 005452851C5EAE72005D56E3 /* ImageScout-Mac.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		008D0C9219E7BA300018CF15 /* ImageScoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008D0C9119E7BA300018CF15 /* ImageScoutTests.swift */; };
-		009608C61A363B030075A5C9 /* ImageScout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005FAE2C19E16CFE00FB4919 /* ImageScout.swift */; };
-		00B8C7941A36505100C188E7 /* ImageScout.h in Headers */ = {isa = PBXBuildFile; fileRef = 00B8C7931A36505100C188E7 /* ImageScout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		00B8C7941A36505100C188E7 /* ImageScout-iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 00B8C7931A36505100C188E7 /* ImageScout-iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		00BB704C1C5EB4BB00E4B019 /* ImageScout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005FAE2C19E16CFE00FB4919 /* ImageScout.swift */; };
+		00BB704D1C5EB4C500E4B019 /* ScoutOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D842621A97D2C1006B4763 /* ScoutOperation.swift */; };
+		00BB704E1C5EB4C500E4B019 /* ImageParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D842651A97D31E006B4763 /* ImageParser.swift */; };
+		00BB704F1C5EB4C500E4B019 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D842671A97D37F006B4763 /* SessionDelegate.swift */; };
 		00D842631A97D2C1006B4763 /* ScoutOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D842621A97D2C1006B4763 /* ScoutOperation.swift */; };
-		00D842641A97D2CB006B4763 /* ScoutOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D842621A97D2C1006B4763 /* ScoutOperation.swift */; };
 		00D842661A97D31E006B4763 /* ImageParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D842651A97D31E006B4763 /* ImageParser.swift */; };
 		00D842681A97D37F006B4763 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D842671A97D37F006B4763 /* SessionDelegate.swift */; };
-		00D842691A97D4B1006B4763 /* ImageParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D842651A97D31E006B4763 /* ImageParser.swift */; };
-		00D8426A1A97D4B3006B4763 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D842671A97D37F006B4763 /* SessionDelegate.swift */; };
 		EAF49BAA1A36028500B395DF /* ImageScout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005FAE2C19E16CFE00FB4919 /* ImageScout.swift */; };
 		EAF49BC41A36093800B395DF /* scout.bmp in Resources */ = {isa = PBXBuildFile; fileRef = EAF49BBC1A36092D00B395DF /* scout.bmp */; };
 		EAF49BC51A36093800B395DF /* scout.gif in Resources */ = {isa = PBXBuildFile; fileRef = EAF49BBD1A36092D00B395DF /* scout.gif */; };
@@ -24,16 +25,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		005452831C5EAE72005D56E3 /* ImageScout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ImageScout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		005452851C5EAE72005D56E3 /* ImageScout-Mac.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ImageScout-Mac.h"; sourceTree = "<group>"; };
+		005452871C5EAE72005D56E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		005FAE2C19E16CFE00FB4919 /* ImageScout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageScout.swift; sourceTree = "<group>"; };
 		008D0C9119E7BA300018CF15 /* ImageScoutTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageScoutTests.swift; sourceTree = "<group>"; };
-		00B8C7931A36505100C188E7 /* ImageScout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageScout.h; sourceTree = "<group>"; };
+		00B8C7931A36505100C188E7 /* ImageScout-iOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ImageScout-iOS.h"; sourceTree = "<group>"; };
 		00D842621A97D2C1006B4763 /* ScoutOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoutOperation.swift; sourceTree = "<group>"; };
 		00D842651A97D31E006B4763 /* ImageParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageParser.swift; sourceTree = "<group>"; };
 		00D842671A97D37F006B4763 /* SessionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionDelegate.swift; sourceTree = "<group>"; };
 		9D52341F19DE0A4A00FEE5AC /* ImageScoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageScoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D52342419DE0A4A00FEE5AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EAF49B911A3600E300B395DF /* ImageScout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ImageScout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EAF49B941A3600E300B395DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAF49B941A3600E300B395DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../ImageScout-iOS/Info.plist"; sourceTree = "<group>"; };
 		EAF49BBC1A36092D00B395DF /* scout.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = scout.bmp; sourceTree = "<group>"; };
 		EAF49BBD1A36092D00B395DF /* scout.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = scout.gif; sourceTree = "<group>"; };
 		EAF49BBE1A36092D00B395DF /* scout.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = scout.jpg; sourceTree = "<group>"; };
@@ -41,6 +45,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0054527F1C5EAE72005D56E3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9D52341C19DE0A4A00FEE5AC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -58,12 +69,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		005452841C5EAE72005D56E3 /* ImageScout-Mac */ = {
+			isa = PBXGroup;
+			children = (
+				005452851C5EAE72005D56E3 /* ImageScout-Mac.h */,
+				005452871C5EAE72005D56E3 /* Info.plist */,
+			);
+			path = "ImageScout-Mac";
+			sourceTree = "<group>";
+		};
+		00BB704B1C5EB34E00E4B019 /* ImageScout-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				00B8C7931A36505100C188E7 /* ImageScout-iOS.h */,
+				EAF49B941A3600E300B395DF /* Info.plist */,
+			);
+			path = "ImageScout-iOS";
+			sourceTree = "<group>";
+		};
 		9D52340119DE0A4900FEE5AC = {
 			isa = PBXGroup;
 			children = (
-				EAF49B921A3600E300B395DF /* Source */,
-				9D52342219DE0A4A00FEE5AC /* Tests */,
+				00BB704B1C5EB34E00E4B019 /* ImageScout-iOS */,
+				005452841C5EAE72005D56E3 /* ImageScout-Mac */,
 				9D52340B19DE0A4900FEE5AC /* Products */,
+				EAF49B921A3600E300B395DF /* Shared */,
+				9D52342219DE0A4A00FEE5AC /* Tests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,6 +103,7 @@
 			children = (
 				9D52341F19DE0A4A00FEE5AC /* ImageScoutTests.xctest */,
 				EAF49B911A3600E300B395DF /* ImageScout.framework */,
+				005452831C5EAE72005D56E3 /* ImageScout.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -94,25 +126,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		EAF49B921A3600E300B395DF /* Source */ = {
+		EAF49B921A3600E300B395DF /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				00B8C7931A36505100C188E7 /* ImageScout.h */,
 				005FAE2C19E16CFE00FB4919 /* ImageScout.swift */,
 				00D842621A97D2C1006B4763 /* ScoutOperation.swift */,
 				00D842651A97D31E006B4763 /* ImageParser.swift */,
 				00D842671A97D37F006B4763 /* SessionDelegate.swift */,
-				EAF49B931A3600E300B395DF /* Supporting Files */,
 			);
-			path = Source;
-			sourceTree = "<group>";
-		};
-		EAF49B931A3600E300B395DF /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				EAF49B941A3600E300B395DF /* Info.plist */,
-			);
-			name = "Supporting Files";
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		EAF49BBB1A36091900B395DF /* Images */ = {
@@ -130,17 +152,44 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		005452801C5EAE72005D56E3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				005452861C5EAE72005D56E3 /* ImageScout-Mac.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EAF49B8E1A3600E300B395DF /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00B8C7941A36505100C188E7 /* ImageScout.h in Headers */,
+				00B8C7941A36505100C188E7 /* ImageScout-iOS.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		005452821C5EAE72005D56E3 /* ImageScout-Mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0054528A1C5EAE72005D56E3 /* Build configuration list for PBXNativeTarget "ImageScout-Mac" */;
+			buildPhases = (
+				0054527E1C5EAE72005D56E3 /* Sources */,
+				0054527F1C5EAE72005D56E3 /* Frameworks */,
+				005452801C5EAE72005D56E3 /* Headers */,
+				005452811C5EAE72005D56E3 /* Resources */,
+				0054528B1C5EAE7E005D56E3 /* Set Version */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ImageScout-Mac";
+			productName = ImageScoutMac;
+			productReference = 005452831C5EAE72005D56E3 /* ImageScout.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		9D52341E19DE0A4A00FEE5AC /* ImageScoutTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9D52342C19DE0A4A00FEE5AC /* Build configuration list for PBXNativeTarget "ImageScoutTests" */;
@@ -158,9 +207,9 @@
 			productReference = 9D52341F19DE0A4A00FEE5AC /* ImageScoutTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		EAF49B901A3600E300B395DF /* ImageScout */ = {
+		EAF49B901A3600E300B395DF /* ImageScout-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EAF49BA41A3600E300B395DF /* Build configuration list for PBXNativeTarget "ImageScout" */;
+			buildConfigurationList = EAF49BA41A3600E300B395DF /* Build configuration list for PBXNativeTarget "ImageScout-iOS" */;
 			buildPhases = (
 				EAF49B8C1A3600E300B395DF /* Sources */,
 				EAF49B8D1A3600E300B395DF /* Frameworks */,
@@ -172,7 +221,7 @@
 			);
 			dependencies = (
 			);
-			name = ImageScout;
+			name = "ImageScout-iOS";
 			productName = ImageScout;
 			productReference = EAF49B911A3600E300B395DF /* ImageScout.framework */;
 			productType = "com.apple.product-type.framework";
@@ -188,6 +237,9 @@
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Kaishin & Co";
 				TargetAttributes = {
+					005452821C5EAE72005D56E3 = {
+						CreatedOnToolsVersion = 7.2;
+					};
 					9D52341E19DE0A4A00FEE5AC = {
 						CreatedOnToolsVersion = 6.0;
 						TestTargetID = 9D52340919DE0A4900FEE5AC;
@@ -210,13 +262,21 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EAF49B901A3600E300B395DF /* ImageScout */,
+				EAF49B901A3600E300B395DF /* ImageScout-iOS */,
 				9D52341E19DE0A4A00FEE5AC /* ImageScoutTests */,
+				005452821C5EAE72005D56E3 /* ImageScout-Mac */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		005452811C5EAE72005D56E3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9D52341D19DE0A4A00FEE5AC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -252,18 +312,39 @@
 			shellPath = /bin/sh;
 			shellScript = "GIT_RELEASE_VERSION=$(git describe --tags --always --abbrev=0)\nCOMMITS=$(git rev-list HEAD | wc -l)\nCOMMITS=$(($COMMITS))\n\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion ${COMMITS}\" \"${INFOPLIST_FILE}\"\n/usr/libexec/PlistBuddy -c \"Set :CFBundleShortVersionString ${GIT_RELEASE_VERSION#*v}\" \"${INFOPLIST_FILE}\"";
 		};
+		0054528B1C5EAE7E005D56E3 /* Set Version */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Set Version";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "GIT_RELEASE_VERSION=$(git describe --tags --always --abbrev=0)\nCOMMITS=$(git rev-list HEAD | wc -l)\nCOMMITS=$(($COMMITS))\n\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion ${COMMITS}\" \"${INFOPLIST_FILE}\"\n/usr/libexec/PlistBuddy -c \"Set :CFBundleShortVersionString ${GIT_RELEASE_VERSION#*v}\" \"${INFOPLIST_FILE}\"";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0054527E1C5EAE72005D56E3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00BB704D1C5EB4C500E4B019 /* ScoutOperation.swift in Sources */,
+				00BB704C1C5EB4BB00E4B019 /* ImageScout.swift in Sources */,
+				00BB704E1C5EB4C500E4B019 /* ImageParser.swift in Sources */,
+				00BB704F1C5EB4C500E4B019 /* SessionDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9D52341B19DE0A4A00FEE5AC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00D842691A97D4B1006B4763 /* ImageParser.swift in Sources */,
-				00D8426A1A97D4B3006B4763 /* SessionDelegate.swift in Sources */,
-				009608C61A363B030075A5C9 /* ImageScout.swift in Sources */,
 				008D0C9219E7BA300018CF15 /* ImageScoutTests.swift in Sources */,
-				00D842641A97D2CB006B4763 /* ScoutOperation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +362,61 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		005452881C5EAE72005D56E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "ImageScout-Mac/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = co.kaishin.ImageScoutMac;
+				PRODUCT_NAME = ImageScout;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		005452891C5EAE72005D56E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "ImageScout-Mac/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = co.kaishin.ImageScoutMac;
+				PRODUCT_NAME = ImageScout;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		9D52342719DE0A4A00FEE5AC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -390,6 +526,7 @@
 		EAF49BA51A3600E300B395DF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -399,12 +536,13 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/ImageScout-iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "co.kaishin.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
+				PRODUCT_NAME = ImageScout;
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -414,17 +552,19 @@
 		EAF49BA61A3600E300B395DF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/ImageScout-iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "co.kaishin.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
+				PRODUCT_NAME = ImageScout;
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -434,6 +574,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0054528A1C5EAE72005D56E3 /* Build configuration list for PBXNativeTarget "ImageScout-Mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				005452881C5EAE72005D56E3 /* Debug */,
+				005452891C5EAE72005D56E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		9D52340519DE0A4900FEE5AC /* Build configuration list for PBXProject "ImageScout" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -452,7 +601,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EAF49BA41A3600E300B395DF /* Build configuration list for PBXNativeTarget "ImageScout" */ = {
+		EAF49BA41A3600E300B395DF /* Build configuration list for PBXNativeTarget "ImageScout-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EAF49BA51A3600E300B395DF /* Debug */,

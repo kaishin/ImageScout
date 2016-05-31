@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		000F95C41CFE52D2002B0814 /* ImageScout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF49B911A3600E300B395DF /* ImageScout.framework */; };
 		005452861C5EAE72005D56E3 /* ImageScout-Mac.h in Headers */ = {isa = PBXBuildFile; fileRef = 005452851C5EAE72005D56E3 /* ImageScout-Mac.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		008D0C9219E7BA300018CF15 /* ImageScoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008D0C9119E7BA300018CF15 /* ImageScoutTests.swift */; };
 		00B8C7941A36505100C188E7 /* ImageScout-iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 00B8C7931A36505100C188E7 /* ImageScout-iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -23,6 +24,16 @@
 		EAF49BC61A36093800B395DF /* scout.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EAF49BBE1A36092D00B395DF /* scout.jpg */; };
 		EAF49BC71A36093800B395DF /* scout.png in Resources */ = {isa = PBXBuildFile; fileRef = EAF49BBF1A36092D00B395DF /* scout.png */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		000F95C21CFE52CB002B0814 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9D52340219DE0A4900FEE5AC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EAF49B901A3600E300B395DF;
+			remoteInfo = "ImageScout-iOS";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		005452831C5EAE72005D56E3 /* ImageScout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ImageScout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				000F95C41CFE52D2002B0814 /* ImageScout.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,6 +213,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				000F95C31CFE52CB002B0814 /* PBXTargetDependency */,
 			);
 			name = ImageScoutTests;
 			productName = ImageScoutTests;
@@ -360,6 +373,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		000F95C31CFE52CB002B0814 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EAF49B901A3600E300B395DF /* ImageScout-iOS */;
+			targetProxy = 000F95C21CFE52CB002B0814 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		005452881C5EAE72005D56E3 /* Debug */ = {

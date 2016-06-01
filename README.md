@@ -2,7 +2,7 @@
 
 # ImageScout
 
-[![GitHub release](https://img.shields.io/github/release/kaishin/ImageScout.svg?maxAge=2592000)](https://github.com/kaishin/ImageScout/releases/latest) [![Travis](https://travis-ci.org/kaishin/ImageScout.svg?branch=master)](https://travis-ci.org/kaishin/ImageScout) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) ![platforms](https://img.shields.io/badge/platforms-iOS%20%7C%20OS%20X-lightgrey.svg)
+[![GitHub release](https://img.shields.io/github/release/kaishin/ImageScout.svg)](https://github.com/kaishin/ImageScout/releases/latest) [![Travis](https://travis-ci.org/kaishin/ImageScout.svg?branch=master)](https://travis-ci.org/kaishin/ImageScout) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) ![platforms](https://img.shields.io/badge/platforms-iOS%20%7C%20OS%20X-lightgrey.svg)
 
 **ImageScout** is a Swift implementation of [fastimage](https://pypi.python.org/pypi/fastimage/0.2.1).
 It allows you to find the size and type of a remote image by downloading as little as possible.

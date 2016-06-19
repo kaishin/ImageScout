@@ -3,9 +3,9 @@ import ImageScout
 
 class ViewController: UIViewController {
   let scout = ImageScout()
-  let jpgPath = NSBundle.mainBundle().URLForResource("scout", withExtension: "jpg")
-  let pngPath = NSBundle.mainBundle().URLForResource("scout", withExtension: "png")
-  let gifPath = NSBundle.mainBundle().URLForResource("scout", withExtension: "gif")
+  let jpgPath = Bundle.main().urlForResource("scout", withExtension: "jpg")
+  let pngPath = Bundle.main().urlForResource("scout", withExtension: "png")
+  let gifPath = Bundle.main().urlForResource("scout", withExtension: "gif")
 
   @IBOutlet weak var jpgLabel: UILabel!
   @IBOutlet weak var pngLabel: UILabel!
@@ -14,23 +14,14 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    scoutImageWithPath(jpgPath!, label: jpgLabel)
-    scoutImageWithPath(pngPath!, label: pngLabel)
-    scoutImageWithPath(gifPath!, label: gifLabel)
+    scoutImage(with: jpgPath!, label: jpgLabel)
+    scoutImage(with: pngPath!, label: pngLabel)
+    scoutImage(with: gifPath!, label: gifLabel)
   }
 
-  private func scoutImageWithPath(path: NSURL, label: UILabel) -> () {
-    scout.scoutImageWithURL(path) { error, size, type in
-      onMain { label.text = "\(Int(size.width))x\(Int(size.height)), \(type.rawValue.uppercaseString)" }
+  private func scoutImage(with URL: Foundation.URL, label: UILabel) -> () {
+    scout.scoutImage(atURL: URL) { error, size, type in
+      DispatchQueue.main.async { label.text = "\(Int(size.width))x\(Int(size.height)), \(type.rawValue.uppercased())" }
     }
   }
 }
-
-func onMain(block: dispatch_block_t) {
-  if NSThread.isMainThread() {
-    block()
-  } else {
-    dispatch_async(dispatch_get_main_queue(), block)
-  }
-}
-

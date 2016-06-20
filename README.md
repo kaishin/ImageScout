@@ -7,6 +7,8 @@
 **ImageScout** is a Swift implementation of [fastimage](https://pypi.python.org/pypi/fastimage/0.2.1).
 It allows you to find the size and type of a remote image by downloading as little as possible.
 
+⚠ Swift 3.0 support is in progress on the [swift3](https://github.com/kaishin/ImageScout/tree/swift3) branch.
+
 #### Why?
 
 Sometimes you need to know the size of a remote image before downloading it, such as

@@ -2,10 +2,10 @@ import QuartzCore
 
 /// Supported image types.
 public enum ScoutedImageType: String {
-  case GIF
-  case PNG
-  case JPEG
-  case Unsupported
+  case gif
+  case png
+  case jpeg
+  case unsupported
 }
 
 /// A scout completion block that takes an optional error, a CGSize, and a ScoutedImageType and returns nothing.
@@ -18,59 +18,62 @@ let errorDomain = "ImageScoutErrorDomain"
 
 /// The class you interact with in order to perform image scouting operations. You should maintain reference to an instance of this class until the callback completes. If reference is lost, your completion handler will never be executed.
 public class ImageScout {
-  private var session: NSURLSession
+  private var session: URLSession
   private var sessionDelegate = SessionDelegate()
-  private var queue = NSOperationQueue()
+  private var queue = OperationQueue()
   private var operations = [String : ScoutOperation]()
 
   /// Creates a default `ImageScout` instance.
   public init() {
-    let sessionConfig = NSURLSessionConfiguration.ephemeralSessionConfiguration()
-    session = NSURLSession(configuration: sessionConfig, delegate: sessionDelegate, delegateQueue: nil)
+    let sessionConfig = URLSessionConfiguration.ephemeral()
+    session = URLSession(configuration: sessionConfig, delegate: sessionDelegate, delegateQueue: nil)
     sessionDelegate.scout = self
   }
 
   /// Scouts an image in a given URL.
   /// - parameter URL: The URL of the image.
   /// - parameter completion: The completion block to call once the scout operation is complete.
-  public func scoutImageWithURL(URL: NSURL, completion: ScoutCompletionBlock) {
-    let operation = ScoutOperation(task: session.dataTaskWithURL(URL))
+  public func scoutImage(atURL URL: Foundation.URL, completion: ScoutCompletionBlock) {
+    guard let urlString = URL.absoluteString else { return }
+
+    let operation = ScoutOperation(with: session.dataTask(with: URL))
+
     operation.completionBlock = { [unowned self] in
       completion(operation.error, operation.size, operation.type)
-      self.operations[URL.absoluteString] = nil
+      self.operations[urlString] = nil
     }
 
-    addOperation(operation, withURI: URL.absoluteString)
+    add(operation, withURI: urlString)
   }
 
   // MARK: - Private Methods
 
-  private func addOperation(operation: ScoutOperation, withURI URI: String) {
+  private func add(_ operation: ScoutOperation, withURI URI: String) {
     operations[URI] = operation
     queue.addOperation(operation)
   }
 
   // MARK: - Class Methods
 
-  class func error(message: String, code: Int) -> NSError {
+  class func error(withMessage message: String, code: Int) -> NSError {
     return NSError(domain: errorDomain, code:code, userInfo:[NSLocalizedDescriptionKey: message])
   }
 }
 
 extension ImageScout {
-  func didReceiveData(data: NSData, task: NSURLSessionDataTask) {
-    guard let requestURL = task.currentRequest?.URL?.absoluteString else { return }
+  func didReceive(data: Data, task: URLSessionDataTask) {
+    guard let requestURL = task.currentRequest?.url?.absoluteString else { return }
     guard let operation = operations[requestURL] else { return }
 
-    operation.appendData(data)
+    operation.append(data)
   }
 
-  func didCompleteWithError(error: NSError?, task: NSURLSessionDataTask) {
-    guard let requestURL = task.currentRequest?.URL?.absoluteString,
+  func didComplete(with error: NSError?, task: URLSessionDataTask) {
+    guard let requestURL = task.currentRequest?.url?.absoluteString,
       let operation = operations[requestURL]
       else { return }
 
-    let completionError = error ?? ImageScout.error(unableToParseErrorMessage, code: 101)
-    operation.terminateWithError(completionError)
+    let completionError = error ?? ImageScout.error(withMessage: unableToParseErrorMessage, code: 101)
+    operation.terminate(with: completionError)
   }
 }

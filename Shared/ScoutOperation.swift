@@ -1,43 +1,42 @@
 import QuartzCore
 
-class ScoutOperation: NSOperation {
-  var size = CGSizeZero
-  var type = ScoutedImageType.Unsupported
+class ScoutOperation: Operation {
+  var size = CGSize.zero
+  var type = ScoutedImageType.unsupported
   var error: NSError?
-  var mutableData = NSMutableData()
-  var dataTask: NSURLSessionDataTask
+  var mutableData = Data()
+  var dataTask: URLSessionDataTask
   
-  init(task: NSURLSessionDataTask) {
+  init(with task: URLSessionDataTask) {
     dataTask = task
   }
   
   override func start() {
-    if !cancelled { dataTask.resume() }
+    if !isCancelled { dataTask.resume() }
   }
   
-  func appendData(data: NSData) {
-    if !cancelled { mutableData.appendData(data) }
-    if (data.length < 2) { return }
+  func append(_ data: Data) {
+    if !isCancelled { mutableData.append(data) }
+    if (data.count < 2) { return }
     
-    if !cancelled {
+    if !isCancelled {
       parse()
     }
   }
   
-  func terminateWithError(completionError: NSError) {
+  func terminate(with completionError: NSError) {
     error = completionError
     complete()
   }
   
   private func parse() {
-    let dataCopy = mutableData.copy() as! NSData
-    type = ImageParser.imageTypeFromData(dataCopy)
+    type = ImageParser.imageType(with: mutableData)
     
-    if (type != .Unsupported) {
-      size = ImageParser.imageSizeFromData(dataCopy)
-      if (size != CGSizeZero) { complete() }
-    } else if dataCopy.length > 2 {
-      self.error = ImageScout.error(unsupportedFormatErrorMessage, code: 102)
+    if (type != .unsupported) {
+      size = ImageParser.imageSize(with: mutableData)
+      if (size != CGSize.zero) { complete() }
+    } else if mutableData.count > 2 {
+      self.error = ImageScout.error(withMessage: unsupportedFormatErrorMessage, code: 102)
       complete()
     }
   }

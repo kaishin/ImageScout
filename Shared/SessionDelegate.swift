@@ -8,7 +8,7 @@ class SessionDelegate: NSObject, URLSessionDataDelegate {
     scout.didReceive(data: data, task: dataTask)
   }
   
-  func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: NSError?) {
+  func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
     guard let scout = scout else { return }
     scout.didComplete(with: error, task: task as! URLSessionDataTask)
   }

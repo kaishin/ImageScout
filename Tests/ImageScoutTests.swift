@@ -15,8 +15,8 @@ class ImageScoutTests: XCTestCase {
   
   func testScoutingJPEG() {
     let scout = ImageScout()
-    let expectation = self.expectation(withDescription: "Scout JPEG images")
-    let imagePath = Bundle(for: ImageScoutTests.self).urlForResource("scout", withExtension: "jpg")!
+    let expectation = self.expectation(description: "Scout JPEG images")
+    let imagePath = Bundle(for: ImageScoutTests.self).url(forResource: "scout", withExtension: "jpg")!
 
     scout.scoutImage(atURL: imagePath) { (error, size, type) -> () in
       expectation.fulfill()
@@ -25,13 +25,13 @@ class ImageScoutTests: XCTestCase {
       XCTAssertNil(error, "Error should be nil")
     }
 
-    waitForExpectations(withTimeout: expectationTimeOut, handler: nil)
+    waitForExpectations(timeout: expectationTimeOut, handler: .none)
   }
 
   func testScoutingPNG() {
     let scout = ImageScout()
-    let expectation = self.expectation(withDescription: "Scout PNG images")
-    let imagePath = Bundle(for: ImageScoutTests.self).urlForResource("scout", withExtension: "png")!
+    let expectation = self.expectation(description: "Scount PNG images")
+    let imagePath = Bundle(for: ImageScoutTests.self).url(forResource: "scout", withExtension: "png")!
 
     scout.scoutImage(atURL: imagePath) { (error, size, type) -> () in
       expectation.fulfill()
@@ -40,13 +40,13 @@ class ImageScoutTests: XCTestCase {
       XCTAssertNil(error, "Error should be nil")
     }
 
-    waitForExpectations(withTimeout: expectationTimeOut, handler: nil)
+    waitForExpectations(timeout: expectationTimeOut, handler: .none)
   }
 
   func testScoutingGIF() {
     let scout = ImageScout()
-    let expectation = self.expectation(withDescription: "Scout GIF images")
-    let imagePath = Bundle(for: ImageScoutTests.self).urlForResource("scout", withExtension: "gif")!
+    let expectation = self.expectation(description: "Scout GIF images")
+    let imagePath = Bundle(for: ImageScoutTests.self).url(forResource: "scout", withExtension: "gif")!
 
     scout.scoutImage(atURL: imagePath) { (error, size, type) -> () in
       expectation.fulfill()
@@ -55,13 +55,13 @@ class ImageScoutTests: XCTestCase {
       XCTAssertNil(error, "Error should be nil")
     }
 
-    waitForExpectations(withTimeout: expectationTimeOut, handler: nil)
+    waitForExpectations(timeout: expectationTimeOut, handler: nil)
   }
 
   func testScoutingUnsupported() {
     let scout = ImageScout()
-    let expectation = self.expectation(withDescription: "Ignore unsupported formats")
-    let imagePath = Bundle(for: ImageScoutTests.self).urlForResource("scout", withExtension: "bmp")!
+    let expectation = self.expectation(description: "Ignore unsupported formats")
+    let imagePath = Bundle(for: ImageScoutTests.self).url(forResource: "scout", withExtension: "bmp")!
 
     scout.scoutImage(atURL: imagePath) { (error, size, type) -> () in
       expectation.fulfill()
@@ -71,6 +71,6 @@ class ImageScoutTests: XCTestCase {
       XCTAssertEqual(error!.code, 102, "Error should describe failure reason")
     }
 
-    waitForExpectations(withTimeout: expectationTimeOut, handler: nil)
+    waitForExpectations(timeout: expectationTimeOut, handler: nil)
   }
 }

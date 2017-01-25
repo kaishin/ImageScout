@@ -3,7 +3,7 @@ import QuartzCore
 class ScoutOperation: Operation {
   var size = CGSize.zero
   var type = ScoutedImageType.unsupported
-  var error: Error?
+  var error: NSError?
   var mutableData = Data()
   var dataTask: URLSessionDataTask
   
@@ -24,7 +24,7 @@ class ScoutOperation: Operation {
     }
   }
   
-  func terminate(with completionError: Error) {
+  func terminate(with completionError: NSError) {
     error = completionError
     complete()
   }

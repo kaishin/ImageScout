@@ -10,6 +10,6 @@ class SessionDelegate: NSObject, URLSessionDataDelegate {
   
   func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
     guard let scout = scout else { return }
-    scout.didComplete(with: error, task: task as! URLSessionDataTask)
+    scout.didComplete(with: error as NSError?, task: task as! URLSessionDataTask)
   }
 }

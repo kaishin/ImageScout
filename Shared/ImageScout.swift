@@ -9,7 +9,7 @@ public enum ScoutedImageType: String {
 }
 
 /// A scout completion block that takes an optional error, a CGSize, and a ScoutedImageType and returns nothing.
-public typealias ScoutCompletionBlock = (Error?, CGSize, ScoutedImageType) -> ()
+public typealias ScoutCompletionBlock = (NSError?, CGSize, ScoutedImageType) -> ()
 
 let unsupportedFormatErrorMessage = "Unsupported image format. ImageScout only supports PNG, GIF, and JPEG."
 let unableToParseErrorMessage = "Scouting operation failed. The remote image is likely malformated or corrupt."
@@ -68,7 +68,7 @@ extension ImageScout {
     operation.append(data)
   }
 
-  func didComplete(with error: Error?, task: URLSessionDataTask) {
+  func didComplete(with error: NSError?, task: URLSessionDataTask) {
     guard let requestURL = task.currentRequest?.url?.absoluteString,
       let operation = operations[requestURL]
       else { return }

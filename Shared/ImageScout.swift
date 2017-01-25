@@ -9,7 +9,7 @@ public enum ScoutedImageType: String {
 }
 
 /// A scout completion block that takes an optional error, a CGSize, and a ScoutedImageType and returns nothing.
-public typealias ScoutCompletionBlock = (NSError?, CGSize, ScoutedImageType) -> ()
+public typealias ScoutCompletionBlock = (Error?, CGSize, ScoutedImageType) -> ()
 
 let unsupportedFormatErrorMessage = "Unsupported image format. ImageScout only supports PNG, GIF, and JPEG."
 let unableToParseErrorMessage = "Scouting operation failed. The remote image is likely malformated or corrupt."
@@ -21,11 +21,11 @@ public class ImageScout {
   private var session: URLSession
   private var sessionDelegate = SessionDelegate()
   private var queue = OperationQueue()
-  private var operations = [String : ScoutOperation]()
+  fileprivate var operations = [String : ScoutOperation]()
 
   /// Creates a default `ImageScout` instance.
   public init() {
-    let sessionConfig = URLSessionConfiguration.ephemeral()
+    let sessionConfig = URLSessionConfiguration.ephemeral
     session = URLSession(configuration: sessionConfig, delegate: sessionDelegate, delegateQueue: nil)
     sessionDelegate.scout = self
   }
@@ -33,14 +33,14 @@ public class ImageScout {
   /// Scouts an image in a given URL.
   /// - parameter URL: The URL of the image.
   /// - parameter completion: The completion block to call once the scout operation is complete.
-  public func scoutImage(atURL URL: Foundation.URL, completion: ScoutCompletionBlock) {
-    guard let urlString = URL.absoluteString else { return }
+  public func scoutImage(atURL URL: Foundation.URL, completion: @escaping ScoutCompletionBlock) {
+    let urlString: String = URL.absoluteString
 
     let operation = ScoutOperation(with: session.dataTask(with: URL))
 
-    operation.completionBlock = { [unowned self] in
+    operation.completionBlock = { [weak self] in
       completion(operation.error, operation.size, operation.type)
-      self.operations[urlString] = nil
+      self?.operations[urlString] = nil
     }
 
     add(operation, withURI: urlString)
@@ -68,7 +68,7 @@ extension ImageScout {
     operation.append(data)
   }
 
-  func didComplete(with error: NSError?, task: URLSessionDataTask) {
+  func didComplete(with error: Error?, task: URLSessionDataTask) {
     guard let requestURL = task.currentRequest?.url?.absoluteString,
       let operation = operations[requestURL]
       else { return }

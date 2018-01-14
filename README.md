@@ -1,13 +1,11 @@
-<img src="https://db.tt/yGZRLRqU" alt="Logo" width="300">
+<img src="https://github.com/kaishin/ImageScout/blob/swift4/Logo.png?raw=true" alt="Logo" width="200">
 
 # ImageScout
 
-[![GitHub release](https://img.shields.io/github/release/kaishin/ImageScout.svg)](https://github.com/kaishin/ImageScout/releases/latest) [![Travis](https://travis-ci.org/kaishin/ImageScout.svg?branch=master)](https://travis-ci.org/kaishin/ImageScout) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) ![platforms](https://img.shields.io/badge/platforms-iOS%20%7C%20OS%20X-lightgrey.svg)
+[![GitHub release](https://img.shields.io/github/release/kaishin/ImageScout.svg)](https://github.com/kaishin/ImageScout/releases/latest) ![Bitrise](https://www.bitrise.io/app/c8ec868bb7b6c8c1/status.svg?token=u3EDxXt5jprAmzAT2RteJg&branch=master) ![Swift 4.0](https://img.shields.io/badge/Swift-4.0-orange.svg) ![platforms](https://img.shields.io/badge/platforms-iOS%20%7C%20OS%20X-lightgrey.svg)
 
 **ImageScout** is a Swift implementation of [fastimage](https://pypi.python.org/pypi/fastimage/0.2.1).
 It allows you to find the size and type of a remote image by downloading as little as possible.
-
-⚠ Swift 3.0 support is in progress on the [swift3](https://github.com/kaishin/ImageScout/tree/swift3) branch.
 
 #### Why?
 
@@ -68,6 +66,7 @@ If the image is not successfully parsed, the size is going to be `CGSizeZero` an
 
 #### Compatibility
 
+- Swift 4 / Xcode 9
 - iOS 8+
 - OS X 10.11
 

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = "ImageScout"
-  s.version = "1.0.0"
+  s.version = "2.0.0"
   s.summary = "Get the size and type of a remote image by downloading as little as possible."
   s.homepage = "https://github.com/kaishin/ImageScout"
   s.social_media_url = "http://twitter.com/kaishin"

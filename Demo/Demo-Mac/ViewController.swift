@@ -3,9 +3,9 @@ import ImageScout
 
 class ViewController: NSViewController {
   let scout = ImageScout()
-  let jpgPath = Bundle.main().urlForResource("scout", withExtension: "jpg")
-  let pngPath = Bundle.main().urlForResource("scout", withExtension: "png")
-  let gifPath = Bundle.main().urlForResource("scout", withExtension: "gif")
+  let jpgPath = Bundle.main.url(forResource: "scout", withExtension: "jpg")
+  let pngPath = Bundle.main.url(forResource: "scout", withExtension: "png")
+  let gifPath = Bundle.main.url(forResource: "scout", withExtension: "gif")
 
   @IBOutlet weak var jpgLabel: NSTextField!
   @IBOutlet weak var pngLabel: NSTextField!

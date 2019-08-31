@@ -1,9 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14865.1" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14819.2"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -15,55 +16,58 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="scout.jpg" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7PM-uZ-pBO">
-                                <rect key="frame" x="20" y="40" width="71" height="20.5"/>
+                                <rect key="frame" x="20" y="64" width="71" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scouting..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8U9-us-BEG">
-                                <rect key="frame" x="20" y="63" width="65" height="16"/>
+                                <rect key="frame" x="20" y="87" width="65" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" name="keyboardFocusIndicatorColor" catalog="System" colorSpace="catalog"/>
+                                <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="scout.png" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="anK-b2-LwB">
-                                <rect key="frame" x="20" y="95" width="77" height="20.5"/>
+                                <rect key="frame" x="20" y="119" width="77" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scouting..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5QP-KC-1Nl">
-                                <rect key="frame" x="20" y="117" width="65" height="16"/>
+                                <rect key="frame" x="20" y="141.5" width="65" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" name="keyboardFocusIndicatorColor" catalog="System" colorSpace="catalog"/>
+                                <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="scout.gif" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xUu-6f-duy">
-                                <rect key="frame" x="20" y="149" width="66.5" height="20.5"/>
+                                <rect key="frame" x="20" y="173.5" width="66.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scouting..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pe1-wI-v75">
-                                <rect key="frame" x="20" y="171" width="65" height="16"/>
+                                <rect key="frame" x="20" y="196" width="65" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" name="keyboardFocusIndicatorColor" catalog="System" colorSpace="catalog"/>
+                                <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="pe1-wI-v75" secondAttribute="trailing" constant="20" symbolic="YES" id="26a-zN-2Wi"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xUu-6f-duy" secondAttribute="trailing" constant="20" symbolic="YES" id="9bT-Q3-jwh"/>
                             <constraint firstItem="xUu-6f-duy" firstAttribute="top" secondItem="5QP-KC-1Nl" secondAttribute="bottom" constant="16" id="FhF-qa-ls0"/>
                             <constraint firstItem="anK-b2-LwB" firstAttribute="top" secondItem="8U9-us-BEG" secondAttribute="bottom" constant="16" id="Jmd-G4-h5a"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="7PM-uZ-pBO" secondAttribute="trailing" constant="20" symbolic="YES" id="KGk-ER-amy"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="anK-b2-LwB" secondAttribute="trailing" constant="20" symbolic="YES" id="MDf-X9-7If"/>
                             <constraint firstItem="pe1-wI-v75" firstAttribute="leading" secondItem="xUu-6f-duy" secondAttribute="leading" id="Qql-kS-egG"/>
                             <constraint firstItem="8U9-us-BEG" firstAttribute="leading" secondItem="anK-b2-LwB" secondAttribute="leading" id="UOd-Qf-cE3"/>
                             <constraint firstItem="5QP-KC-1Nl" firstAttribute="leading" secondItem="xUu-6f-duy" secondAttribute="leading" id="Vd0-gZ-Hn7"/>
                             <constraint firstItem="5QP-KC-1Nl" firstAttribute="leading" secondItem="anK-b2-LwB" secondAttribute="leading" id="Vdj-VH-gtf"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="8U9-us-BEG" secondAttribute="trailing" constant="20" symbolic="YES" id="XhD-Kc-Z1q"/>
                             <constraint firstItem="7PM-uZ-pBO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Zdm-EB-vb1"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="5QP-KC-1Nl" secondAttribute="trailing" constant="20" symbolic="YES" id="kdd-IP-wDL"/>
                             <constraint firstItem="7PM-uZ-pBO" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="nfE-FF-dLt"/>
                             <constraint firstItem="5QP-KC-1Nl" firstAttribute="top" secondItem="anK-b2-LwB" secondAttribute="bottom" constant="2" id="oDF-na-vMD"/>
                             <constraint firstItem="pe1-wI-v75" firstAttribute="top" secondItem="xUu-6f-duy" secondAttribute="bottom" constant="2" id="olL-wt-X8K"/>
@@ -79,6 +83,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="34" y="31"/>
         </scene>
     </scenes>
 </document>

@@ -1,7 +1,7 @@
-import UIKit
 import XCTest
 import ImageScout
 
+private final class BundleToken {}
 private let expectationTimeOut: TimeInterval = 5
 
 class ImageScoutTests: XCTestCase {
@@ -12,11 +12,17 @@ class ImageScoutTests: XCTestCase {
   override func tearDown() {
     super.tearDown()
   }
+
+  func url(forResource name: String, extension ext: String) -> URL {
+      let bundle = Bundle(for: BundleToken.self)
+      return bundle.url(forResource: name, withExtension: ext)!
+  }
+
   
   func testScoutingJPEG() {
     let scout = ImageScout()
     let expectation = self.expectation(description: "Scout JPEG images")
-    let imagePath = Bundle(for: ImageScoutTests.self).url(forResource: "scout", withExtension: "jpg")!
+    let imagePath = url(forResource: "scout", extension: "jpg")
 
     scout.scoutImage(atURL: imagePath) { (error, size, type) -> () in
       expectation.fulfill()
@@ -31,7 +37,7 @@ class ImageScoutTests: XCTestCase {
   func testScoutingPNG() {
     let scout = ImageScout()
     let expectation = self.expectation(description: "Scount PNG images")
-    let imagePath = Bundle(for: ImageScoutTests.self).url(forResource: "scout", withExtension: "png")!
+    let imagePath = url(forResource: "scout", extension: "png")
 
     scout.scoutImage(atURL: imagePath) { (error, size, type) -> () in
       expectation.fulfill()
@@ -46,7 +52,7 @@ class ImageScoutTests: XCTestCase {
   func testScoutingGIF() {
     let scout = ImageScout()
     let expectation = self.expectation(description: "Scout GIF images")
-    let imagePath = Bundle(for: ImageScoutTests.self).url(forResource: "scout", withExtension: "gif")!
+    let imagePath = url(forResource: "scout", extension: "gif")
 
     scout.scoutImage(atURL: imagePath) { (error, size, type) -> () in
       expectation.fulfill()
@@ -61,7 +67,7 @@ class ImageScoutTests: XCTestCase {
   func testScoutingUnsupported() {
     let scout = ImageScout()
     let expectation = self.expectation(description: "Ignore unsupported formats")
-    let imagePath = Bundle(for: ImageScoutTests.self).url(forResource: "scout", withExtension: "bmp")!
+    let imagePath = url(forResource: "scout", extension: "bmp")
 
     scout.scoutImage(atURL: imagePath) { (error, size, type) -> () in
       expectation.fulfill()

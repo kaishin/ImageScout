@@ -1,7 +1,7 @@
 test-macos:
 	set -o pipefail && \
 	xcodebuild test \
-		-scheme ImageScout-mac \
+		-scheme ImageScout-macOS \
 		-destination platform="macOS" \
 		| xcpretty
 

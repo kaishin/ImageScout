@@ -186,9 +186,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		005452821C5EAE72005D56E3 /* ImageScout-Mac */ = {
+		005452821C5EAE72005D56E3 /* ImageScout-macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0054528A1C5EAE72005D56E3 /* Build configuration list for PBXNativeTarget "ImageScout-Mac" */;
+			buildConfigurationList = 0054528A1C5EAE72005D56E3 /* Build configuration list for PBXNativeTarget "ImageScout-macOS" */;
 			buildPhases = (
 				0054527E1C5EAE72005D56E3 /* Sources */,
 				005452801C5EAE72005D56E3 /* Headers */,
@@ -197,7 +197,7 @@
 			);
 			dependencies = (
 			);
-			name = "ImageScout-Mac";
+			name = "ImageScout-macOS";
 			productName = ImageScoutMac;
 			productReference = 005452831C5EAE72005D56E3 /* ImageScout.framework */;
 			productType = "com.apple.product-type.framework";
@@ -303,7 +303,7 @@
 			projectRoot = "";
 			targets = (
 				EAF49B901A3600E300B395DF /* ImageScout-iOS */,
-				005452821C5EAE72005D56E3 /* ImageScout-Mac */,
+				005452821C5EAE72005D56E3 /* ImageScout-macOS */,
 				9D52341E19DE0A4A00FEE5AC /* ImageScout-iOSTests */,
 				005851EF231AB18B00CC0D72 /* ImageScout-macOSTests */,
 			);
@@ -384,7 +384,7 @@
 		};
 		005851F7231AB18B00CC0D72 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 005452821C5EAE72005D56E3 /* ImageScout-Mac */;
+			target = 005452821C5EAE72005D56E3 /* ImageScout-macOS */;
 			targetProxy = 005851F6231AB18B00CC0D72 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -709,7 +709,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0054528A1C5EAE72005D56E3 /* Build configuration list for PBXNativeTarget "ImageScout-Mac" */ = {
+		0054528A1C5EAE72005D56E3 /* Build configuration list for PBXNativeTarget "ImageScout-macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				005452881C5EAE72005D56E3 /* Debug */,

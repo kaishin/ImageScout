@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "005452821C5EAE72005D56E3"
                BuildableName = "ImageScout.framework"
-               BlueprintName = "ImageScout-Mac"
+               BlueprintName = "ImageScout-macOS"
                ReferencedContainer = "container:ImageScout.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -69,7 +69,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "005452821C5EAE72005D56E3"
             BuildableName = "ImageScout.framework"
-            BlueprintName = "ImageScout-Mac"
+            BlueprintName = "ImageScout-macOS"
             ReferencedContainer = "container:ImageScout.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -85,7 +85,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "005452821C5EAE72005D56E3"
             BuildableName = "ImageScout.framework"
-            BlueprintName = "ImageScout-Mac"
+            BlueprintName = "ImageScout-macOS"
             ReferencedContainer = "container:ImageScout.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

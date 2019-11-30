@@ -2,7 +2,9 @@
 
 # ImageScout
 
-[![GitHub release](https://img.shields.io/github/release/kaishin/ImageScout.svg)](https://github.com/kaishin/ImageScout/releases/latest) ![Bitrise](https://www.bitrise.io/app/c8ec868bb7b6c8c1/status.svg?token=u3EDxXt5jprAmzAT2RteJg&branch=master) ![Swift 4.0](https://img.shields.io/badge/Swift-4.0-orange.svg) ![platforms](https://img.shields.io/badge/platforms-iOS%20%7C%20OS%20X-lightgrey.svg)
+![Test](https://github.com/kaishin/ImageScout/workflows/Test/badge.svg)
+[![GitHub release](https://img.shields.io/github/release/kaishin/ImageScout.svg)](https://github.com/kaishin/ImageScout/releases/latest) 
+![Swift 5.0](https://img.shields.io/badge/Swift-5.0-orange.svg) ![platforms](https://img.shields.io/badge/platforms-iOS%20%7C%20macOS-lightgrey.svg)
 
 **ImageScout** is a Swift implementation of [fastimage](https://pypi.python.org/pypi/fastimage/0.2.1).
 It allows you to find the size and type of a remote image by downloading as little as possible.
@@ -18,6 +20,18 @@ ImageScout parses the image data as it is downloaded. As soon as it finds out th
 it stops the download. The downloaded data is below 60 KB in most cases.
 
 #### Install
+
+#### Swift Package Manager
+
+Add the following to your `Package.switft` file:
+
+```swift
+let package = Package(
+    dependencies: [
+    .package(url: "https://github.com/kaishin/ImageScout.git", from: "2.1.0")
+    ],
+)
+```
 #### [Carthage](https://github.com/Carthage/Carthage)
 
 - Add the following to your Cartfile: `github "kaishin/ImageScout"`
@@ -66,9 +80,9 @@ If the image is not successfully parsed, the size is going to be `CGSizeZero` an
 
 #### Compatibility
 
-- Swift 4 / Xcode 9
+- Swift 5 / Xcode 11
 - iOS 8+
-- OS X 10.11
+- macOS 10.11
 
 #### License
 

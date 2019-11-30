@@ -16,5 +16,3 @@ jobs:
     - uses: actions/checkout@v1
     - name: Run iOS tests
       run: make test-ios
-    - name: Run macOS tests
-      run: make test-macos
